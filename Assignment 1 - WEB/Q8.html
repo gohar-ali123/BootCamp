@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Assignment1 Q8</title>
+</head>
+<body>
+
+<h2>Assignment1 Q8</h2>
+<p>
+    <em>Q8- Create a webpage in which the user inputs First name, Last Name, and 
+    Name format(dropdown) ({firstname, lastname} or {lastname, first name}) and 
+    then display the name according to the name format.</em>
+</p>
+<br><br>
+
+<form>
+  <!-- First name input -->
+  <label for="first-name">First Name</label><br>
+  <input type="text" id="first-name" name="first-name" value="Name">
+  <br><br>
+
+  <!-- Last name input -->
+  <label for="last-name">Last Name</label><br>
+  <input type="text" id="last-name" name="last-name" value="Test">
+  <br><br>
+
+  <!-- Name format drop down menu -->
+  <select name="name-format" id="drop-down">
+    <option value="last-first">Last Name, First Name</option>
+    <option value="first-last">First Name, Last Name</option>
+  </select>
+  <br><br><br>
+
+</form>
+
+<button type="button" onclick="FormatName()">Format Name</button>
+<br><br>
+
+<p>Formatted Name: <span style="font-weight: bold;"></span></p>
+
+<script type="text/javascript">
+    function FormatName() {
+
+      const nameFormat = document.getElementsByTagName("select");
+
+      const firstName = document.getElementById("first-name")
+      const lastName = document.getElementById("last-name")
+
+      const outPut = document.getElementsByTagName("span");
+
+      if(nameFormat[0].value == "first-last"){
+        outPut[0].innerHTML = firstName.value + " " + lastName.value;
+      }
+      else{
+        outPut[0].innerHTML = lastName.value + " " + firstName.value;
+      }
+    }
+</script>
+
+</body>
+</html> 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q16-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("button").click(function(){
+                $("div p").replaceWith(function(){
+                    return "<b>" + $(this).text() + "</b>"
+                });
+            });
+
+            /***************ALTERNATE METHOD**************/
+
+            //let x;
+            // $("button").click(function(){
+            //     x = $("div p").html();
+            //     $("div p").replaceWith("<b>" + x + "</b>");
+            // });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q16- Replace all the p tags with the b tags.</em>
+    </p>
+    <br>
+
+    <div id="mainDiv" style="padding: 20px;">
+        <p>This is a paragraph.</p>
+        <p>Bold this too!</p>
+    </div>
+
+
+    <button>Replace Tags</button>
+
+</body>
+</html> 
