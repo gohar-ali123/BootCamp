@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Assignment1 Q3</title>
+</head>
+<body>
+    <h2>Assignment1 Q3</h2>
+    <p><em>Q3- Create a webpage that changes the text of a paragraph on the click of a button.</em></p>
+    <br>
+
+    <p id="myPara">I am a paragraph. I can be changed using JavaScript</p>
+
+    <button type="button" onclick="ChangePara()">Change</button>
+
+
+    <script type="text/javascript">
+        function ChangePara()
+        {
+            document.getElementById('myPara').innerHTML = 'I am the new paragraph. JavaScript changed me'; 
+            document.getElementById('myPara').style.color = 'red';
+        }
+    </script>
+
+</body>
+</html>

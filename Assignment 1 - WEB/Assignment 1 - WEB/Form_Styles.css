@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+  }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 500px;
+    margin:0px auto;
+    padding-top: 50px;
+}
+h1{
+    font-size: 30px;
+}
+input, select, textarea{
+    width: 100%;
+    font-size: 16px;
+    padding: 7px 10px;
+    margin-top: 5px;
+    border:1px solid lightgray;
+    border-radius: 3px;
+}
+/* select value:first-of-type{
+    color: lightgray;
+    font-size: 12px;
+
+} */
+input[type = "checkbox"]{
+    width:auto;
+}
+span{
+    margin-right: 20px;
+}
+button{
+    color: black;
+    background-color: #b6d427;
+    border-radius: 3px;
+    padding:10px 30px;
+    display:inline-block;
+    margin:5px 0px;
+    text-decoration: none;
+    border: none;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q14-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#btn-bef").click(function(){
+                $("#mainDiv").before("<p>Before</p>");
+            });
+            $("#btn-aft").click(function(){
+                $("#mainDiv").after("<p>After</p>");
+            });
+            $("#btn-pre").click(function(){
+                $("#mainDiv").prepend("<pre style='font-size:16px'>    Prepend</pre>");
+            });
+            $("#btn-app").click(function(){
+                $("#mainDiv").append("<pre style='font-size:16px'>    Append</pre>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q14- Create a webpage in which a user adds a text on every click. (use append(), before(), after(), prepend() methods separately)</em>
+    </p>
+    <br><br>
+
+    <button id="btn-bef">Before</button>
+    <button id="btn-aft">After</button>
+    <button id="btn-pre">Prepend</button>
+    <button id="btn-app">Append</button>
+    <hr>
+
+    <div id="mainDiv" >
+        <p>This is main Div.</p>
+    </div>
+
+</body>
+</html> 
