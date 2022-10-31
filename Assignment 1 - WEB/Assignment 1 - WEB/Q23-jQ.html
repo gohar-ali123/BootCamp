@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q23-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#CD").click(function(){
+
+                $("div").animate({
+                    width: "400px",
+                    height: "400px"
+                }, 2500);
+            });
+
+            $("#Stop").click(function(){
+
+                $("div").stop();
+
+            });
+
+            $("#Reset").click(function(){
+
+                $("div").css({"height": "200px", "width": "200px"});
+
+            });
+            
+        });
+    </script>
+    <style>
+        div{
+            background-color: red;
+            margin: 15px;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q23. Create a web-page in which you change the height and width of a div using animate on the click of a button. 
+            There should be a button to stop the animation at any time (stop()) and when you click the change dimensions 
+            button again after stopping it should resume the animation. Add another button that will reset it. Use some speed 
+            to display the animation.</em>
+    </p>
+    <br><br>
+
+    
+    
+    <button type="button" id="CD" title="Animates the red block div">Change Dimensions</button>
+    <button type="button" id="Stop" title="Stops the animation">Stop</button>
+    <button type="button" id="Reset" title="Resets to initial condition">Reset</button>
+        
+
+    <div>
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-au">
+
+<head>
+    <title>Q26-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#setCss").click(function () {
+
+                $(".setDiv").css("background-color", "yellow");
+            });
+
+            $("#aClass").click(function () {
+
+                $(".artClassDiv").addClass("customClass");
+
+            });
+
+            $("#rClass").click(function () {
+
+                $(".artClassDiv").removeClass("customClass");
+
+            });
+
+            $("#tClass").click(function () {
+
+                $(".artClassDiv").toggleClass("customClass");
+
+            });
+
+            $("#copyButton").click(function () {
+
+                if (($("#copyCheck").prop("checked"))) {
+                    $(".copyClass").addClass("finalDiv");
+
+                }
+
+            });
+
+        });
+    </script>
+    <style>
+        div {
+            margin: 15px;
+            width: 700px;
+        }
+
+        div.setDiv {
+            background-color: red;
+        }
+
+        div.artClassDiv {
+            background-color: brown;
+        }
+
+        div.customClass {
+            font-size: 40px;
+            color: white;
+        }
+
+        div.copyClass {
+            background-color: lightgray;
+        }
+
+        div.finalDiv {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q26. Create a web-page that will consist of 4 buttons as depicted below:</em>
+    </p>
+    <br><br>
+
+
+    <button type="button" id="setCss">Set CSS</button>
+    <button type="button" id="aClass">Add Class</button>
+    <button type="button" id="rClass">Remove Class</button>
+    <button type="button" id="tClass">Toggle Class</button>
+
+
+    <div class="setDiv">
+        <p>we will use this div to verify "Set Class"</p>
+    </div>
+
+    <div class="artClassDiv">
+        <p>We will use this div to verify "Add, remove and toggle class"</p>
+    </div>
+
+    <div class="copyClass">
+        <p>We will "copy" the class of below div here</p>
+    </div>
+
+    <div class="finalDiv">
+        <p>We will copy the css class of this div to above div.</p>
+
+        <label for="copyCheck">Check to Copy CSS</label>
+        <input type="checkbox" id="copyCheck" name="copyCheck" value="copyCheck">
+        <br><br><br>
+
+        <button type="button" id="copyButton">Copy CSS</button>
+        <br>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q25-jQ</title>
+    <link rel="stylesheet" href="Form_Styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("#sUp").click(function(){
+
+                $("form").slideUp(2300, "swing", function(){
+                    alert("Form section has been slid up.");
+                });
+
+            });
+
+            $("#sDown").click(function(){
+
+                $("form").slideDown(2300, "swing", function(){
+                    alert("Form section has been slid down.");
+                });
+
+            });
+
+            $('#toggleS').click(function(){
+
+                $("form").slideToggle(2300, "swing", function(){
+                    alert("Form section slideToggle() method has been executed.");
+                });
+
+            });
+
+
+            $("#subButton").click(function(){
+
+                let errflag = true;
+
+                //try catch for Employee ID
+                try { 
+                    if($("#name").val() == "") throw "Employee ID can not be empty";
+                    else if($("#name").val().length > 15) throw "Character Limit Exceeds";
+                }
+                catch(err) {
+                    $("#nErrDisplay").html("Error: " + err);
+                    errflag = false;
+                }
+
+                //try catch for FeedBack
+                try { 
+                    if($("#TextArea").val() == "") throw "FeedBack can not be empty";
+                    else if($("#name").val().length > 50) throw "Character Limit Exceeds";
+                }
+                catch(err) {
+                    $("#tErrDisplay").html("Error: " + err);
+                    errflag = false;
+                }
+
+                if(errflag)
+                {
+                    $("form").hide();
+                    $("#showButton").show();
+                }
+
+            });
+
+            $("#showButton").click(function(){
+
+                $("#showButton").hide();
+                $("form").show();
+
+            });
+           
+        });
+    </script>
+    <style>
+        form p{
+            color: red;
+        }
+        #showButton{
+            display: none;
+            background-color: grey;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q25. Create a web-page which consist of 3 slide buttons (slide up, slide down, slide toggle). </em>
+    </p>
+
+    
+    <h1>Click the Buttons to Slide Up or Down</h1>
+    <button type="button" id="sUp" title="feedback form slides up">Slide Up</button>
+    <button type="button" id="sDown" title="feedback form slides down">Slide Down</button>
+    <button type="button" id="toggleS" title="feedback form toggles betwen slide up and slide down">Toggle Slide</button>
+        
+    <form action="#">
+
+        <h2>FeedBack Form</h2>
+
+        <label for="name">Employee ID</label><br>
+        <input type="text" name="name" id="name">
+        <p id="nErrDisplay"></p>
+        <br>
+
+        <label for="TextArea">FeedBack</label><br>
+        <textarea id="TextArea" name="Aboutyou" rows="6" ></textarea>
+        <p id="tErrDisplay"></p>
+        <br>
+
+        <input type="checkbox" id="organization" name="organization" value="organization">
+        <label for="organization">Was this helful?</label><br><br>
+
+        <button type="button" id="subButton">Submit</button>
+        <br><br>
+
+    </form>
+
+    <br><br>
+    <button type="button" id="showButton">ShowFeedback Form</button>
+    <br><br>    
+
+
+
+</body>
+</html> 

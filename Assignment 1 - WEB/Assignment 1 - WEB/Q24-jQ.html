@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q24-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            
+            $("#fIn").click(function(){
+
+                $("div.red").delay(500).fadeTo(2500, 0.65);
+                $("div.green").delay(1500).fadeTo(2500, 0.65);
+                $("div.blue").delay(3000).fadeTo(2500, 0.65);
+            });
+
+            $("#fOut").click(function(){
+
+                $("div.red").delay(500).fadeOut(2500);
+                $("div.green").delay(1500).fadeOut(2500);
+                $("div.blue").delay(3000).fadeOut(2500);
+
+            });
+
+            $('#toggleF').click(function(){
+
+                let stopFade = false;
+                $("div:visible").each(function(){
+                    $(".red").delay(500).fadeOut(2500);
+                    $(".green").delay(1500).fadeOut(2500);
+                    $(".blue").delay(3000).fadeOut(2500);
+                    x = true;
+                });
+
+                if(stopFade){
+                    return false;
+                }
+
+                $("div:hidden").each(function(){
+                    $(".red").delay(500).fadeTo(2500, 0.65);
+                    $(".green").delay(1500).fadeTo(2500, 0.65);
+                    $(".blue").delay(3000).fadeTo(2500, 0.65);
+                });
+
+            });
+           
+        });
+    </script>
+    <style>
+        div{
+            margin: 15px;
+            width: 80px;
+            height: 80px;
+            display: none;
+        }
+        div.red {
+            background-color: red;
+        }
+        div.green {
+            background-color: green;
+        }
+        div.blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q24. Create a web-page that uses 3 buttons. When you click on the Fade-In button the 3 boxes illustrated below gets 
+            displayed one after another with some delay plus the boxes should fade to some opacity. And when you click Fade-Out 
+            the three boxes fade out one after another with some delay. The toggle fade button should perform fade-in and fade-out.</em>
+    </p>
+    <br><br>
+
+    
+    
+    <button type="button" id="fIn" title="All boxes fade-in">Fade-In</button>
+    <button type="button" id="fOut" title="All boxes fade-out">Fade-Out</button>
+    <button type="button" id="toggleF" title="Toggles between fade-in and fade-out">Toggle Fade</button>
+        
+
+    <div class="red"></div>
+
+    <div class="green"></div>
+
+    <div class="blue"></div>
+
+
+
+</body>
+</html> 

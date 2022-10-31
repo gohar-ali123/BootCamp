@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q28-jQ</title>
+
+    <link rel="stylesheet" href="./jquery-ui-1.13.2/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="./jquery-ui-1.13.2/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $("#fDate").datepicker();
+            $("#tDate").datepicker();
+
+            let errflag = true;
+
+            $("#calcButton").click(function(){
+            
+            //try catch for From Date
+            try {
+
+                if($("#fDate").val() == "") throw "From Date can not be empty";
+   
+            }
+            catch(err) {
+               $("#fErrDisplay").html("Error: " + err);
+               errflag = false;
+            }
+
+            //try catch for To Date
+            try {
+
+                if($("#tDate").val() == "") throw "To Date can not be empty";
+
+            }
+            catch(err) {
+                $("#tErrDisplay").html("Error: " + err);
+                errflag = false;
+            }
+
+            if(errflag)
+                {   
+                    
+                    const fromDate = new Date($("#fDate").val());
+                    const toDate = new Date($("#tDate").val());
+                    
+                    let days = 0;
+
+                    //gets time in millisecond, calculates difference and then converts to days
+                    days = ((toDate.getTime() - fromDate.getTime())/(24*60*60*1000)); 
+                    
+                    $("#daysDisp").html("Total number of days between dates From Date: " + fromDate + " to To Date: " + toDate + " is <b>" + days + "</b>.");
+
+                } 
+
+            });
+            
+        });
+    </script>
+
+    <style>
+        form p{
+            color: red;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q28. Create a web page that use two date picker fields for getting date and calculate the number of days 
+            between them on the click of button. Use Date Data-type.</em>
+    </p>
+    <br><br>
+
+    <h1>Number of Days</h1>
+
+    <form action="#">
+
+        <label for="fDate">From Date:</label><br>
+        <input type="text" name="fDate" id="fDate">
+        <p id="fErrDisplay"></p>
+        <br>
+
+        <label for="tDate">To Date:</label><br>
+        <input type="text" name="tDate" id="tDate">
+        <p id="tErrDisplay"></p>
+        <br>
+
+        <button type="button" id="calcButton" title="Calculates number of days between the picked dates">Calculate Days</button>
+        <br><br>
+
+    </form>
+     
+    <p id="daysDisp"></p>
+
+</body>
+</html> 

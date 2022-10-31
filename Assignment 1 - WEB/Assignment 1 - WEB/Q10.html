@@ -35,7 +35,7 @@
         <p id="bErrDisplay"></p>
 
         <label for="interets">Select your Interest</label><br>
-        <select id="interets" name="interets" placeholder="-select">
+        <select id="interests" name="interests" placeholder="-select">
             <option value="" selected disabled>-select-</option>
             <option value="Football">Football</option>
             <option value="Badminton">Badminton</option>
@@ -112,12 +112,15 @@
             }
 
             //try catch for Select interest dropdown
-            // try { 
-            //     if(interestsInput.value == "" || interestsInput.value == null) throw "Please select the value to proceed";
-            // }
-            // catch(err) {
-            //     sErr_Display.innerHTML = "Error: " + err;
-            // }
+
+            console.log(interestsInput);
+            console.log(interestsInput.value);
+            try { 
+                if(interestsInput.value == "" || interestsInput.value == null) throw "Please select the value to proceed";
+            }
+            catch(err) {
+                sErr_Display.innerHTML = "Error: " + err;
+            }
             
             
         }
