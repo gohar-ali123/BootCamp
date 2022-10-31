@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Assignment1 Q12</title>
+    <style>
+        form p{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Assignment1 Q12</h2>
+    <p>
+        <em>Q12- Create a login page and verify the username and password with the hardcoded values 
+            that are already present in the code. If the login is successful, redirect them to another 
+            page. Otherwise show them the errors.</em>
+    </p>
+    <br><br>
+
+    <h1>Login Page</h1>
+
+    <form>
+
+        <label for="uName">User Name</label><br>
+        <input type="text" name="uName" id="uName" placeholder="Type user name">
+        <br>
+        <p id="nErrDisplay"></p>
+
+        <label for="pWord">Password</label><br>
+        <input type="password" name="pWord" id="pWord" placeholder="Type password">
+        <br>
+        <p id="pErrDisplay"></p>
+
+    </form>
+
+    <button type="button" onclick="Verify()">Login</button>
+    <br><br>
+
+    <script type="text/javascript">
+        function Verify() {
+
+            const uNameInput = document.getElementById("uName").value;
+            const pWordInput = document.getElementById("pWord").value;
+
+            // Hardcoded values
+            const correct_uName = "Gohar-Ali123";
+            const correct_pWord = "gds!527";
+
+            const nErr_Display = document.getElementById("nErrDisplay");
+            const pErr_Display = document.getElementById("pErrDisplay");
+
+            try { 
+                if(uNameInput == "") throw "No user name entered";
+                else if(uNameInput != correct_uName) throw "Wrong user name";
+            }
+            catch(err) {
+                nErr_Display.innerHTML = "Error: " + err;
+            }
+
+            try { 
+                if(pWordInput == "") throw "No password entered";
+                else if(pWordInput != correct_pWord) throw "Wrong password";
+            }
+            catch(err) {
+                pErr_Display.innerHTML = "Error: " + err;
+            }
+
+            if((uNameInput == correct_uName) && (pWordInput == correct_pWord))
+            {
+                window.location.href = "Q6.html";
+            }
+            
+        }
+    </script>
+
+</body>
+</html>

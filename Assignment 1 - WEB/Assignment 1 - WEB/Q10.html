@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Assignment1 Q10</title>
+    <link rel="stylesheet" href="Form_Styles.css" />
+    <style>
+        form p{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment1 Q10</h2>
+    <p>
+        <em>Q10- Write a JavaScript code to add validations in the Name, Email, DOB and 
+            Select your Interest</em>
+    </p>
+    <br><br>
+
+    <h1>Fill your Interests</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga vero, nemo.</p>
+    
+    <form>
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name"><br>
+        <p id="nErrDisplay"></p>
+
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <p id="eErrDisplay"></p>
+
+        <label for="birthday">DOB</label><br>
+        <input type="date" id="birthday" name="birthday"><br>
+        <p id="bErrDisplay"></p>
+
+        <label for="interets">Select your Interest</label><br>
+        <select id="interets" name="interets" placeholder="-select">
+            <option value="" selected disabled>-select-</option>
+            <option value="Football">Football</option>
+            <option value="Badminton">Badminton</option>
+            <option value="Cricket">Cricket</option>
+            <option value="Hockey">Hockey</option>
+        </select><br>
+        <p id="sErrDisplay"></p>
+
+        <input type="checkbox" id="individual" name="individual" value="individual">
+        <span>
+            <label for="individual">individual</label>
+        </span>
+        <input type="checkbox" id="organization" name="organization" value="organization">
+        <label for="organization">organization</label><br><br>
+
+        <label for="TextArea">About you</label>
+        <textarea id="TextArea" name="Aboutyou" rows="12" ></textarea>
+        <br><br>
+    
+        <button type="button" onclick="Validate()">Send Details</button>
+        <br><br>
+        
+    </form> 
+
+    <script type="text/javascript">
+        Validate = () => {
+
+            const nameInput = document.getElementById("name").value;
+            const emailInput = document.getElementById("email").value;
+            const birthdayInput = document.getElementById("birthday").value;
+            const interestsInput = document.getElementById("interests");
+
+            const nErr_Display = document.getElementById("nErrDisplay");
+            const eErr_Display = document.getElementById("eErrDisplay");
+            const bErr_Display = document.getElementById("bErrDisplay");
+            const sErr_Display = document.getElementById("sErrDisplay");
+
+            //try catch for Name
+            try { 
+                if(nameInput == "") throw "Name can not be empty";
+                else if(nameInput.length > 50) throw "Character Limit Exceeds";
+            }
+            catch(err) {
+                nErr_Display.innerHTML = "Error: " + err;
+            }
+
+            //try catch for email
+            try { 
+                if(emailInput == "") throw "Email can not be empty";
+                else if(!(emailInput.includes("@"))) throw "Invalid Email";
+                else if(emailInput.indexOf("@") == 0) throw "Invalid Email";
+                else if(emailInput.indexOf("@") == (emailInput.length - 1)) throw "Invalid Email";
+            }
+            catch(err) {
+                eErr_Display.innerHTML = "Error: " + err;
+            }
+
+            //try catch for DOB
+            Age = bInput => {
+                const birthYear = parseInt(bInput.substr(0,4));
+                const currentDate = new Date();
+                const currentYear = currentDate.getFullYear();
+                return currentYear - birthYear;
+            }
+
+            try {
+
+                if(birthdayInput == "") throw "DOB can not be empty";
+                else if(Age(birthdayInput) <= 13) throw "Hello Kid! You are too young for this";
+            }
+            catch(err) {
+                bErr_Display.innerHTML = "Error: " + err;
+                
+            }
+
+            //try catch for Select interest dropdown
+            // try { 
+            //     if(interestsInput.value == "" || interestsInput.value == null) throw "Please select the value to proceed";
+            // }
+            // catch(err) {
+            //     sErr_Display.innerHTML = "Error: " + err;
+            // }
+            
+            
+        }
+    </script>
+    
+</body>
+</html>

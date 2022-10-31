@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q22-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+
+                $("div").append("<p>"+ $(":text").val() + "</p>");
+                $(":text").val(" ");
+
+                $("div p").prev().addClass("blueBox");
+            });
+            
+            
+            $(":text").keypress(function(keyEvent){ 
+            if(keyEvent.which == 13 ){
+                $("div").append("<p>"+ $(":text").val() + "</p>");
+                $(":text").val(" ");
+
+                $("div p").prev().addClass("blueBox");
+                return false;
+            };
+            });
+
+            
+
+        });
+    </script>
+    <style>
+        div p{
+            background-color: yellow;
+            padding: 15px;
+            width:fit-content;
+        }
+        p.blueBox{
+            color: white;
+            background-color: blue;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q22- Create a web page in which a user inputs a name, clicks a button (or presses enter while 
+            typing on the textbox) and that name gets printed inside a yellow box (the textbox also empties 
+            after clicking the button/pressing enter). The boxes keep on adding when the button is clicked, 
+            and the previous box is converted into a dark blue box and text color white  </em>
+    </p>
+    <br>
+
+    <form>
+
+        <input type="text">
+    
+        <button type="button" title="Adds the typed values, below as Boxes">Add Box</button>
+        <hr>
+    
+    </form>
+    <div>
+
+    </div>
+
+</body>
+</html> 

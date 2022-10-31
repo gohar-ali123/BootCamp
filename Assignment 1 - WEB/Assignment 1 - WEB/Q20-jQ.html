@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q20-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                
+                //Can also use .prop("checked") to see if checkbox is checked or not.
+                $(":checkbox:checked").each(function(){
+                    $("label[for='"+$(this).attr("id")+"']").remove(); //Removes labels of checked checkboxes
+                    $("label[for='"+$(this).attr("id")+"'] br").remove(); //Removes br tags of labels of checked checkboxes
+                    $(this).remove(); //Removes the checked checkboxes
+                });
+                
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q20- Create a webpage in which there is a list of names. Each name has a checkbox before them.
+             If the checkbox is clicked and delete button is pressed, that name gets deleted from the list 
+             and the next name takes the place of the deleted name. Multiple names can also be deleted by 
+             checking multiple checkboxes. </em>
+    </p>
+    <br>
+
+    <form>
+    
+        <button type="button" title="Deletes the checked items">Delete</button>
+        <hr>
+
+        <input type="checkbox" id="name1" name="name1" value="Arshad">
+        <label for="name1">Arshad <br> </label>
+        <input type="checkbox" id="name2" name="name2" value="Rasheed">
+        <label for="name2">Rasheed <br> </label>
+        <input type="checkbox" id="name3" name="name3" value="Saleem">
+        <label for="name3">Saleem <br> </label>
+        <input type="checkbox" id="name4" name="name4" value="Aqeel">
+        <label for="name4">Aqeel <br> </label>
+        <input type="checkbox" id="name5" name="name5" value="Huria">
+        <label for="name5">Huria <br> </label>
+       
+    </form>
+
+</body>
+</html> 

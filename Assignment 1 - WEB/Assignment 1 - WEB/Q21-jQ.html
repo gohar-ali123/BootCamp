@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-au">
+<head>
+    <title>Q21-jQ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(":checkbox").click(function(){
+
+                if($(this).prop("checked")) //returns true value and executes if checkbox is checked.
+                {
+                    $(":text." + $(this).attr("class")).prop("disabled", false); //enables textbox
+                }
+                else
+                {
+                    $(":text." + $(this).attr("class")).prop("disabled", true); //disables texbbox
+                }
+
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h2>Assignment2</h2>
+    <p>
+        <em>Q21- Create a Web Page in which there are 2 text boxes, there is a checkbox with each textbox. 
+            The textbox is enabled only when the checkbox next to it is checked, else the textbox is empty 
+            and disabled.</em>
+    </p>
+    <br>
+
+    <form>
+
+        <input type="checkbox" id="check1" class="op1" name="textbox1">
+        <input type="text" class="op1" disabled>
+
+        <input type="checkbox" id="check2" class="op2" name="textbox2">
+        <input type="text" class="op2" disabled>
+       
+    </form>
+
+</body>
+</html> 
